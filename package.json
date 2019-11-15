@@ -59,7 +59,7 @@
   "prettier": {
     "bracketSpacing": true,
     "printWidth": 80,
-    "trailingComma": "none",
+    "trailingComma": "es5",
     "semi": false,
     "singleQuote": true,
     "tabWidth": 2
