@@ -12,7 +12,8 @@ module.exports = {
   extends: [
     'eslint:recommended',
     'plugin:ember/recommended',
-    'plugin:prettier/recommended'
+    'plugin:prettier/recommended',
+    'airbnb-base',
   ],
   env: {
     browser: true
@@ -20,6 +21,9 @@ module.exports = {
   rules: {
     'ember/no-jquery': 'error',
     'prettier/prettier': 'error'
+    'prettier/prettier': 'error',
+    semi: 0,
+    'import/no-extraneous-dependencies': 0,
   },
   overrides: [
     // node files
