@@ -18,10 +18,18 @@ module.exports = function(environment) {
         Date: false,
       },
     },
-
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
+    },
+    firebase: {
+      apiKey: 'AIzaSyALAYTG4il_c_yUSkyuNBnCLzBByxcRDz8',
+      authDomain: 'truhiker.firebaseapp.com',
+      databaseURL: 'https://truhiker.firebaseio.com',
+      projectId: 'truhiker',
+      storageBucket: 'truhiker.appspot.com',
+      messagingSenderId: '755812740277',
+      appId: '1:755812740277:web:f4f382e9bdf725a5ff22fc',
     },
   }
 
