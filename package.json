@@ -18,6 +18,7 @@
     "test": "ember test"
   },
   "devDependencies": {
+    "@babel/plugin-proposal-optional-chaining": "^7.7.5",
     "@ember/optional-features": "^1.0.0",
     "babel-eslint": "^8.0.0",
     "broccoli-asset-rev": "^3.0.0",
