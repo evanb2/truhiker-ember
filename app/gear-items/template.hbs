@@ -1,3 +1,10 @@
 <h1>Gear Closet</h1>
 
+<section>
+  {{#each model as |gearItem|}}
+    <div>{{gearItem.name}}</div>
+    <div>{{gearItem.description}}</div>
+  {{/each}}
+</section>
+
 {{outlet}}
