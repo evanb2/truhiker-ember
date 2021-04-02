@@ -1,3 +1,22 @@
 {{page-title "Gear Item Show"}}
 
 <h1>{{@model.name}}</h1>
+
+<form>
+  <label>
+    Name:
+    <XInput value={{@model.name}} @onChange={{queue (set @model "name") this.save}} />
+  </label>
+  <label>
+    Description:
+    <XInput value={{@model.description}} @onChange={{queue (set @model "description") this.save}} />
+  </label>
+  <label>
+    Units:
+    <XInput value={{@model.units}} @onChange={{queue (set @model "units") this.save}} />
+  </label>
+  <label>
+    Weight:
+    <XInput value={{@model.weight}} @onChange={{queue (set @model "weight") this.save}} />
+  </label>
+</form>
