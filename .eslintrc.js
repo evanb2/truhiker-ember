@@ -1,4 +1,4 @@
-'use strict';
+'use strict'
 
 module.exports = {
   root: true,
@@ -19,7 +19,9 @@ module.exports = {
   env: {
     browser: true,
   },
-  rules: {},
+  rules: {
+    semi: 0,
+  },
   overrides: [
     // node files
     {
@@ -50,4 +52,4 @@ module.exports = {
       },
     },
   ],
-};
+}
