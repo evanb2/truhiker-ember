@@ -1,3 +1,14 @@
-<h2 id="title">Welcome to Ember</h2>
+{{page-title "TruHiker"}}
 
-{{outlet}}
+<nav>
+  <LinkTo @route="gear-lists">
+    Gear Lists
+  </LinkTo>
+  <LinkTo @route="gear-items">
+    Gear Items
+  </LinkTo>
+</nav>
+
+<main>
+  {{outlet}}
+</main>
