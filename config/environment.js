@@ -1,9 +1,7 @@
-/* eslint-disable strict */
+'use strict';
 
-'use strict'
-
-module.exports = function(environment) {
-  const ENV = {
+module.exports = function (environment) {
+  let ENV = {
     modulePrefix: 'tru-hiker',
     environment,
     rootURL: '/',
@@ -18,6 +16,7 @@ module.exports = function(environment) {
         Date: false,
       },
     },
+
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
@@ -31,7 +30,7 @@ module.exports = function(environment) {
       messagingSenderId: '755812740277',
       appId: '1:755812740277:web:f4f382e9bdf725a5ff22fc',
     },
-  }
+  };
 
   if (environment === 'development') {
     // ENV.APP.LOG_RESOLVER = true;
@@ -43,19 +42,19 @@ module.exports = function(environment) {
 
   if (environment === 'test') {
     // Testem prefers this...
-    ENV.locationType = 'none'
+    ENV.locationType = 'none';
 
     // keep test console output quieter
-    ENV.APP.LOG_ACTIVE_GENERATION = false
-    ENV.APP.LOG_VIEW_LOOKUPS = false
+    ENV.APP.LOG_ACTIVE_GENERATION = false;
+    ENV.APP.LOG_VIEW_LOOKUPS = false;
 
-    ENV.APP.rootElement = '#ember-testing'
-    ENV.APP.autoboot = false
+    ENV.APP.rootElement = '#ember-testing';
+    ENV.APP.autoboot = false;
   }
 
   if (environment === 'production') {
     // here you can enable a production-specific feature
   }
 
-  return ENV
-}
+  return ENV;
+};

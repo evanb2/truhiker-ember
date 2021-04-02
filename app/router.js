@@ -1,14 +1,9 @@
 import EmberRouter from '@ember/routing/router'
-import config from './config/environment'
+import config from 'tru-hiker/config/environment'
 
 export default class Router extends EmberRouter {
   location = config.locationType
-
   rootURL = config.rootURL
 }
 
-Router.map(function() {
-  this.route('gear-items', { path: '/gear-closet' }, function() {
-    this.route('new')
-  })
-})
+Router.map(function () {})

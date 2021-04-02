@@ -1,4 +1,5 @@
-/* eslint-disable global-require */
+'use strict';
+
 module.exports = {
   root: true,
   parser: 'babel-eslint',
@@ -18,21 +19,13 @@ module.exports = {
   env: {
     browser: true,
   },
-  rules: {
-    'ember/no-jquery': 'error',
-    'prettier/prettier': 'error',
-    semi: 0,
-    'import/no-extraneous-dependencies': 0,
-    'func-names': ['error', 'never'],
-    'prefer-const': 2,
-    'no-const-assign': 2,
-    'no-var': 2,
-  },
+  rules: {},
   overrides: [
     // node files
     {
       files: [
         '.eslintrc.js',
+        '.prettierrc.js',
         '.template-lintrc.js',
         'ember-cli-build.js',
         'testem.js',
@@ -49,14 +42,12 @@ module.exports = {
         node: true,
       },
       plugins: ['node'],
+      extends: ['plugin:node/recommended'],
       rules: {
-        ...require('eslint-plugin-node').configs.recommended.rules,
-        // add your custom rules and overrides for node files here
-
         // this can be removed once the following is fixed
         // https://github.com/mysticatea/eslint-plugin-node/issues/77
         'node/no-unpublished-require': 'off',
       },
     },
   ],
-}
+};
