@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "experimentalDecorators": true,
+    "module": "commonjs",
+    "target": "es6",
+    "baseUrl": ".",
+    "paths": {
+      "tru-hiker/*": ["app/*"],
+      "tru-hiker/config/*": ["config/*"],
+      "tru-hiker/tests/*": ["tests/*"]
+    }
+  },
+  "exclude": ["node_modules", "dist", "tmp", "temp"]
+}
