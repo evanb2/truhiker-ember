@@ -2,6 +2,9 @@
 /blueprints/*/files/
 /vendor/
 
+# ts
+app/models/
+
 # compiled output
 /dist/
 /tmp/
