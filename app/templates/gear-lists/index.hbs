@@ -1,3 +1,19 @@
 {{page-title "Gear Lists"}}
 
 <h1>Gear Lists</h1>
+
+<ul>
+  {{#each @model as |gearList|}}
+    <li>
+      <LinkTo @route="gear-lists.show" @model={{gearList.id}}>
+        {{gearList.name}}
+      </LinkTo>
+    </li>
+  {{/each}}
+
+  <li>
+    <button {{on "click" this.createGearList}} type="button">
+      + New Gear List
+    </button>
+  </li>
+</ul>

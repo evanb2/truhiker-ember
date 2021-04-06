@@ -12,6 +12,7 @@ interface Group {
 
 interface GearList {
   name: string;
+  description: string;
   groups: Group[];
 }
 

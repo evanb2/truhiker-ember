@@ -1,1 +1,14 @@
 {{page-title "Gear List Show"}}
+
+<h1>{{@model.name}}</h1>
+
+<form>
+  <label>
+    Name:
+    <XInput value={{@model.name}} @onChange={{queue (set @model "name") this.save}} />
+  </label>
+  <label>
+    Description:
+    <XInput value={{@model.description}} @onChange={{queue (set @model "description") this.save}} />
+  </label>
+</form>
