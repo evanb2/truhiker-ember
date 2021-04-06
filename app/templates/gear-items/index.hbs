@@ -12,7 +12,11 @@
   {{/each}}
 
   <li>
-    <button {{on "click" this.createGearItem}} type="button">
+    <button
+      {{on "click" this.createGearItem}}
+      class="shadow-md bg-green-400 text-white p-4 rounded hover:shadow-lg hover:bg-green-500"
+      type="button"
+    >
       + New Gear Item
     </button>
   </li>
