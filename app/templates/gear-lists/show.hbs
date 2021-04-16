@@ -1,14 +1,24 @@
 {{page-title "Gear List Show"}}
 
-<h1>{{@model.name}}</h1>
+<h1 class="mb-4 text-3xl">{{@model.name}}</h1>
 
-<form>
-  <label>
-    Name:
-    <XInput value={{@model.name}} @onChange={{queue (set @model "name") this.save}} />
-  </label>
-  <label>
-    Description:
-    <XInput value={{@model.description}} @onChange={{queue (set @model "description") this.save}} />
-  </label>
+<form class="">
+  <div class="flex mb-4">
+    <div class="flex flex-col flex-auto mr-4">
+      <label class="mb-2">
+        Name
+      </label>
+      <XInput value={{@model.name}} @onChange={{queue (set @model "name") this.save}} class="rounded px-4 py-2 border" />
+    </div>
+    <div class="flex flex-col flex-auto">
+      <label class="mb-2">
+        Description
+      </label>
+      <XInput value={{@model.description}} @onChange={{queue (set @model "description") this.save}} class="rounded px-4 py-2 border" />
+    </div>
+  </div>
+
+  {{#each @model.groups as |group|}}
+    <GearListGroup @group={{group}} @onSave={{this.save}} />
+  {{/each}}
 </form>

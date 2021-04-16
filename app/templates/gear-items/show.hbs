@@ -2,21 +2,21 @@
 
 <h1>{{@model.name}}</h1>
 
-<form>
-  <label>
+<form class="flex flex-col">
+  <label class="mb-2">
     Name:
-    <XInput value={{@model.name}} @onChange={{queue (set @model "name") this.save}} />
+    <XInput value={{@model.name}} @onChange={{queue (set @model "name") this.save}} class="rounded px-4 py-2 border" />
   </label>
-  <label>
+  <label class="mb-2">
     Description:
-    <XInput value={{@model.description}} @onChange={{queue (set @model "description") this.save}} />
+    <XInput value={{@model.description}} @onChange={{queue (set @model "description") this.save}} class="rounded px-4 py-2 border" />
   </label>
-  <label>
-    Units:
-    <XInput value={{@model.units}} @onChange={{queue (set @model "units") this.save}} />
-  </label>
-  <label>
+  <label class="mb-2">
     Weight:
-    <XInput value={{@model.weight}} @onChange={{queue (set @model "weight") this.save}} />
+    <XInput value={{@model.weight}} @onChange={{queue (set @model "weight") this.save}} class="rounded px-4 py-2 border" />
   </label>
+  {{!-- <label class="mb-2">
+    Units:
+    <XInput value={{@model.units}} @onChange={{queue (set @model "units") this.save}} class="rounded px-4 py-2 border" />
+  </label> --}}
 </form>

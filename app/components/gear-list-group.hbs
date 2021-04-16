@@ -1,0 +1,8 @@
+<div class="border-2 rounded p-4">
+  <XInput value={{@group.name}} @onChange={{queue (set @group "name") @onSave}} class="rounded px-4 py-2 border" />
+  <div class="table w-full mt-4">
+    {{#each @group.gearListItems as |gearListItem|}}
+      <GearListItem @gearListItem={{gearListItem}} @onSave={{@onSave}} />
+    {{/each}}
+  </div>
+</div>

@@ -1,14 +1,16 @@
 {{page-title "TruHiker"}}
 
-<nav>
-  <LinkTo @route="gear-lists">
-    Gear Lists
-  </LinkTo>
-  <LinkTo @route="gear-items">
-    Gear Items
-  </LinkTo>
-</nav>
+<div class="">
+  <nav class="border-b p-4 flex">
+    <LinkTo @route="gear-lists" class="mr-4">
+      Gear Lists
+    </LinkTo>
+    <LinkTo @route="gear-items">
+      Gear Items
+    </LinkTo>
+  </nav>
 
-<main>
-  {{outlet}}
-</main>
+  <main class="bg-white container">
+    {{outlet}}
+  </main>
+</div>

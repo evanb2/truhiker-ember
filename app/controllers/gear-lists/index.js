@@ -7,7 +7,22 @@ export default class GearListsIndexController extends Controller {
   createGearList = async () => {
     const gearList = this.store.createRecord('gearList', {
       name: 'New List',
-      groups: [],
+      groups: [
+        {
+          name: 'New Group',
+          description: '',
+          gearListItems: [
+            {
+              gearListItem: {
+                name: '',
+                description: '',
+                weight: '',
+              },
+              quantity: 1,
+            },
+          ],
+        },
+      ],
     })
 
     await gearList.save()
