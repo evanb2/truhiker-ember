@@ -21,4 +21,12 @@
   {{#each @model.groups as |group|}}
     <GearListGroup @group={{group}} @onSave={{this.save}} />
   {{/each}}
+
+  <button
+    {{on "click" this.addGroup}}
+    class="shadow-md bg-green-400 text-white p-2 rounded hover:shadow-lg hover:bg-green-500 mt-4"
+    type="button"
+  >
+    + Group
+  </button>
 </form>
