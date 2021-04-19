@@ -1,6 +1,6 @@
 {{page-title "Gear List Show"}}
 
-<h1 class="mb-4 text-3xl">{{@model.name}}</h1>
+<h1 class="mb-4 text-3xl">{{@model.gearList.name}}</h1>
 
 <form class="">
   <div class="flex mb-4">
@@ -8,18 +8,25 @@
       <label class="mb-2">
         Name
       </label>
-      <XInput value={{@model.name}} @onChange={{queue (set @model "name") this.save}} class="rounded px-4 py-2 border" />
+      <XInput value={{@model.gearList.name}} @onChange={{queue (set @model.gearList "name") this.save}} class="rounded px-4 py-2 border" />
     </div>
     <div class="flex flex-col flex-auto">
       <label class="mb-2">
         Description
       </label>
-      <XInput value={{@model.description}} @onChange={{queue (set @model "description") this.save}} class="rounded px-4 py-2 border" />
+      <XInput value={{@model.gearList.description}} @onChange={{queue (set @model.gearList "description") this.save}} class="rounded px-4 py-2 border" />
     </div>
   </div>
 
-  {{#each @model.groups as |group|}}
-    <GearListGroup @group={{group}} @onSave={{this.save}} />
+  {{#each @model.gearList.groups as |group index|}}
+    <GearListGroup
+      @group={{group}}
+      @gearList={{@model.gearList}}
+      @onSave={{this.save}}
+      @removeGroup={{fn this.removeGroup index}}
+      @gearItems={{@model.gearItems}}
+      @addGearItem={{fn this.addGearItem index}}
+    />
   {{/each}}
 
   <button

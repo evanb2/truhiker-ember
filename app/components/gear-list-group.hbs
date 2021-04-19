@@ -1,8 +1,25 @@
-<div class="border-2 rounded p-4">
+<div class="border-2 rounded p-4 mb-4">
   <XInput value={{@group.name}} @onChange={{queue (set @group "name") @onSave}} class="rounded px-4 py-2 border" />
-  <div class="table w-full mt-4">
+  <div class="mt-4">
     {{#each @group.gearListItems as |gearListItem|}}
-      <GearListItem @gearListItem={{gearListItem}} @onSave={{@onSave}} />
+      <GearListItem @gearListItem={{gearListItem}} @onSave={{@onSave}} @gearItems={{@gearItems}} />
     {{/each}}
+  </div>
+  <div class="flex justify-between mt-4 ml-1">
+    <button
+      {{on "click" @addGearItem}}
+      class="shadow-md bg-green-400 text-white p-2 rounded hover:shadow-lg hover:bg-green-500 mr-4"
+      type="button"
+    >
+      + Item
+    </button>
+    <button
+      {{on "click" @removeGroup}}
+      disabled={{eq @gearList.groups.length 1}}
+      class="shadow-md text-white p-2 rounded hover:shadow-lg disabled:opacity-50 bg-red-400 hover:bg-red-500"
+      type="button"
+    >
+      X Remove Group
+    </button>
   </div>
 </div>

@@ -1,34 +1,55 @@
-<div class="table-row">
-  <div class="table-cell p-1">
+<div class="flex">
+  <div class="p-1">
     <div class="flex flex-col flex-auto">
       <label class="mb-2">
-        Name
+        Item
       </label>
-      <XInput value={{@gearListItem.name}} @onChange={{queue (set @gearListItem "name") @onSave}} class="rounded px-4 py-2 border" />
+      <XSelect
+        class="border-2 rounded p-2"
+        @value={{@gearListItem.gearItem}}
+        @onChange={{queue (set @gearListItem "gearItem") @onSave}}
+        as |xs|
+      >
+        <xs.option disabled>Select a Gear Item...</xs.option>
+        {{#each @gearItems as |gearItem|}}
+          <xs.option @value={{gearItem}}>{{gearItem.name}}</xs.option>
+        {{/each}}
+      </XSelect>
     </div>
   </div>
-  <div class="table-cell p-1">
+  <div class="flex-1 p-1">
     <div class="flex flex-col flex-auto">
       <label class="mb-2">
         Description
       </label>
-      <XInput value={{@gearListItem.description}} @onChange={{queue (set @gearListItem "description") @onSave}} class="rounded px-4 py-2 border" />
+      <p class="p-2">
+        {{@gearListItem.gearItem.description}}
+      </p>
     </div>
   </div>
-  <div class="table-cell p-1">
+  <div class="flex-none w-28 p-1">
     <div class="flex flex-col flex-auto">
       <label class="mb-2">
         Weight
       </label>
-      <XInput value={{@gearListItem.weight}} @onChange={{queue (set @gearListItem "weight") @onSave}} class="rounded px-4 py-2 border" />
+      <XInput
+        value={{@gearListItem.gearItem.weight}}
+        {{!-- @onChange={{queue (set @gearListItem.gearItem "weight") @onSave}} --}}
+        class="rounded p-2 border"
+        disabled
+      />
     </div>
   </div>
-  <div class="table-cell p-1">
+  <div class="flex-none w-20 p-1">
     <div class="flex flex-col flex-auto">
       <label class="mb-2">
-        Quantity
+        Qty
       </label>
-      <XInput value={{@gearListItem.quantity}} @onChange={{queue (set @gearListItem "quantity") @onSave}} class="rounded px-4 py-2 border" />
+      <XInput
+        @value={{@gearListItem.quantity}}
+        @onChange={{queue (set @gearListItem "quantity") @onSave}}
+        class="rounded p-2 border"
+      />
     </div>
   </div>
 </div>
