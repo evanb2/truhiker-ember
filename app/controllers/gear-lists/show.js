@@ -1,6 +1,9 @@
 import Controller from '@ember/controller'
+import { tracked } from '@glimmer/tracking'
 
 export default class GearListsShowController extends Controller {
+  @tracked weightUnits = 'lb'
+
   save = () => this.model.gearList.save()
 
   addGroup = () => {

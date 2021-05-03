@@ -10,11 +10,27 @@
       </label>
       <XInput value={{@model.gearList.name}} @onChange={{queue (set @model.gearList "name") this.save}} class="rounded px-4 py-2 border" />
     </div>
-    <div class="flex flex-col flex-auto">
+    <div class="flex flex-col flex-auto mr-4">
       <label class="mb-2">
         Description
       </label>
       <XInput value={{@model.gearList.description}} @onChange={{queue (set @model.gearList "description") this.save}} class="rounded px-4 py-2 border" />
+    </div>
+    <div class="flex flex-col flex-none w-20">
+      <label class="mb-2">
+        Units
+      </label>
+      <XSelect
+        class="border-2 rounded p-2"
+        @value={{this.weightUnits}}
+        @onChange={{set this "weightUnits"}}
+        as |xs|
+      >
+        <xs.option @value="oz">oz</xs.option>
+        <xs.option @value="lb">lb</xs.option>
+        <xs.option @value="g">g</xs.option>
+        <xs.option @value="kg">kg</xs.option>
+      </XSelect>
     </div>
   </div>
 
@@ -26,6 +42,7 @@
       @removeGroup={{fn this.removeGroup index}}
       @gearItems={{@model.gearItems}}
       @addGearItem={{fn this.addGearItem index}}
+      @weightUnits={{this.weightUnits}}
     />
   {{/each}}
 

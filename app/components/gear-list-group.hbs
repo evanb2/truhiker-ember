@@ -1,5 +1,12 @@
 <div class="border-2 rounded p-4 mb-4">
-  <XInput value={{@group.name}} @onChange={{queue (set @group "name") @onSave}} class="rounded px-4 py-2 border" />
+  <div class="flex items-center justify-between">
+    <XInput value={{@group.name}} @onChange={{queue (set @group "name") @onSave}} class="rounded px-4 py-2 border" />
+    <p>
+      <span class="bold">Total: </span>
+      {{category-weight @group.gearListItems @weightUnits}}
+      <span>{{@weightUnits}}</span>
+    </p>
+  </div>
   <div class="mt-4">
     {{#each @group.gearListItems as |gearListItem|}}
       <GearListItem @gearListItem={{gearListItem}} @onSave={{@onSave}} @gearItems={{@gearItems}} />

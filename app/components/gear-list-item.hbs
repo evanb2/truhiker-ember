@@ -43,18 +43,18 @@
   <div class="flex-none w-20 p-1">
     <div class="flex flex-col">
       <label class="mb-2">
-          Units
-        </label>
-        <XSelect
-          class="border-2 rounded p-2"
-          @value={{@model.units}}
-          @onChange={{queue (set @gearListItem "units") this.save}}
-          disabled
-          as |xs|
-        >
-          <xs.option @value="oz">oz</xs.option>
-          <xs.option @value="lb">lb</xs.option>
-        </XSelect>
+        Units
+      </label>
+      <XSelect
+        class="border-2 rounded p-2"
+        @value={{@gearListItem.gearItem.units}}
+        {{!-- @onChange={{queue (set @gearListItem.gearItem "units") this.save}} --}}
+        disabled
+        as |xs|
+      >
+        <xs.option @value="oz">oz</xs.option>
+        <xs.option @value="lb">lb</xs.option>
+      </XSelect>
     </div>
   </div>
   <div class="flex-none w-20 p-1">
